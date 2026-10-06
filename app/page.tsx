@@ -1,7 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { Products } from "@/components/sections/Products";
 import { Testimonial } from "@/components/sections/Testimonial";
-import { Footer } from "@/components/site/Footer";
 import { Nav } from "@/components/site/Nav";
 
 // First release: hero, products, and the MN8 testimonial.
@@ -14,7 +13,6 @@ export default function Home() {
         <Products />
         <Testimonial />
       </main>
-      <Footer />
     </>
   );
 }
