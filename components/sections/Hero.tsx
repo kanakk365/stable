@@ -20,7 +20,7 @@ export function Hero() {
         />
         <DotField variant="deep" horizon={0.5} className="absolute inset-0 -z-10 h-full w-full" />
 
-        <div className="shell flex flex-col items-center pb-[200px] pt-32 text-center sm:pb-[260px] sm:pt-36 lg:pb-[300px]">
+        <div className="shell flex flex-col items-center pb-[200px] pt-36 text-center sm:pb-[260px] sm:pt-40 lg:pb-[300px]">
           <a
             href={insightsHref}
             className="soft-in group inline-flex max-w-full items-center gap-3 rounded-full border border-white/12 bg-white/[0.06] py-1.5 pl-1.5 pr-4 text-[0.86rem] text-on-deep backdrop-blur transition-colors hover:border-mint/60"

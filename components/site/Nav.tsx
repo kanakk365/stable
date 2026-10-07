@@ -33,10 +33,11 @@ export function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-[var(--z-nav)] px-3 pt-3 sm:px-5">
       <div
-        className={`mx-auto flex max-w-[1280px] items-center gap-4 rounded-full border px-3 py-2 pl-5 transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ${
+        className={`mx-auto flex max-w-[1280px] items-center gap-4 rounded-full border px-3 py-2 pl-5 transition-[background-color,border-color,box-shadow,backdrop-filter,translate] duration-500 ease-[var(--ease-out-soft)] ${
           scrolled
-            ? "border-line bg-surface/75 shadow-[0_12px_40px_-20px_oklch(0.25_0.035_182/0.35)] backdrop-blur-xl"
-            : "border-transparent bg-transparent"
+            ? "translate-y-0 border-line bg-surface/75 shadow-[0_12px_40px_-20px_oklch(0.25_0.035_182/0.35)] backdrop-blur-xl"
+            : // Resting on the hero banner: sit lower so the bar has air above it.
+              "translate-y-5 border-transparent bg-transparent sm:translate-y-7"
         }`}
       >
         <Link href="/" aria-label="Stable Auto home" className={`shrink-0 transition-colors duration-500 ${onDark ? "text-on-deep" : "text-ink"}`}>
