@@ -1,17 +1,20 @@
-// Copy for the Stable Auto home page, taken section by section from
-// stable.auto. Links to pages we haven't rebuilt yet point at the live site:
-// the pages it currently serves (PAGE) where one exists, otherwise the
-// original site's own link.
+// Copy for the Stable Auto site, taken section by section from stable.auto.
+// Rebuilt pages are internal routes (PAGE); everything else keeps the
+// original site's own link (LIVE).
 
-const LIVE = "https://stable.auto";
-const PAGE = {
-  about: `${LIVE}/About%20Stable%20Auto.html`,
-  careers: `${LIVE}/Careers%20at%20Stable%20Auto.html`,
-  evaluate: `${LIVE}/Stable%20Product%20%E2%80%94%20Evaluate.html`,
-  operate: `${LIVE}/Stable%20Product%20%E2%80%94%20Operate.html`,
-  utilization: `${LIVE}/Stable%20Insights_%20EV%20Charging%20Utilization%20Trends.html`,
-  pricing: `${LIVE}/Stable%20Insights_%20EV%20Charging%20Pricing%20Trends.html`,
+export const LIVE = "https://stable.auto";
+export const PAGE = {
+  about: "/about",
+  careers: "/careers",
+  evaluate: "/evaluate",
+  operate: "/operate",
+  utilization: "/insights/utilization",
+  pricing: "/insights/pricing",
 };
+
+/** Book a call with the Stable team (HubSpot meetings). */
+export const DEMO = "https://meetings.hubspot.com/akash-krishnani/evaluate-meeting";
+export const SITE_ANALYSIS = "https://share.hsforms.com/1T1ayaE0zQfSHolan4Ho8dQc4u3d";
 
 export const insightsHref = PAGE.utilization;
 
@@ -28,8 +31,8 @@ export const nav: {
     {
       label: "Products",
       children: [
-        { label: "Evaluate", href: "#evaluate", note: "Forecast and de-risk new sites" },
-        { label: "Operate", href: "#operate", note: "Monitor and optimize live networks" },
+        { label: "Evaluate", href: PAGE.evaluate, note: "Forecast and de-risk new sites" },
+        { label: "Operate", href: PAGE.operate, note: "Monitor and optimize live networks" },
       ],
     },
     {
@@ -37,8 +40,6 @@ export const nav: {
       children: [
         { label: "Utilization Trends", href: PAGE.utilization, note: "Charger performance nationwide" },
         { label: "Pricing Trends", href: PAGE.pricing, note: "Market pricing by region" },
-        { label: "Gasoline Price Equivalent Index", href: `${LIVE}/insights/gas-price-index`, note: "EV vs. fuel economics" },
-        { label: "Articles & Webinars", href: `${LIVE}/resources`, note: "Research from the Stable team" },
       ],
     },
     {
@@ -46,12 +47,11 @@ export const nav: {
       children: [
         { label: "About", href: PAGE.about },
         { label: "Careers", href: PAGE.careers },
-        { label: "Contact", href: `${LIVE}/contact` },
       ],
     },
   ],
   login: { label: "Login", href: "https://app.stable.auto/" },
-  cta: { label: "See it in action", href: `${LIVE}/try` },
+  cta: { label: "See it in action", href: PAGE.evaluate },
 };
 
 export const hero = {
@@ -59,8 +59,8 @@ export const hero = {
   headline: ["Smarter", "forecasting", "and", "performance", "for", "EV", "charging"],
   emphasis: ["forecasting", "performance"],
   sub: "Stable gives investors and operators the data and tools to forecast, deploy, and optimize EV charging with confidence",
-  primary: { label: "See it in action", href: `${LIVE}/try` },
-  secondary: { label: "Contact sales", href: `${LIVE}/contact` },
+  primary: { label: "See it in action", href: PAGE.evaluate },
+  secondary: { label: "Contact sales", href: DEMO },
 };
 
 export const products = [
@@ -128,13 +128,6 @@ export const insights = {
       badge: "New Oct '25",
       href: PAGE.utilization,
     },
-    {
-      id: "gas",
-      title: "Gas Price Equivalent",
-      body: "Compare EV charging and fuel economics",
-      badge: "New Oct '25",
-      href: `${LIVE}/insights/gas-price-index`,
-    },
   ],
 } as const;
 
@@ -145,8 +138,8 @@ export const problem = {
     "From forecasting ROI before you build to optimizing network performance after deployment, Stable turns data into measurable results.",
   ],
   ctas: [
-    { label: "Explore Evaluate", href: "#evaluate" },
-    { label: "Explore Operate", href: "#operate" },
+    { label: "Explore Evaluate", href: PAGE.evaluate },
+    { label: "Explore Operate", href: PAGE.operate },
   ],
 };
 
@@ -175,7 +168,7 @@ export const why = {
 export const cta = {
   headline: "Partner with Stable on your next deployment",
   sub: "Start with a 30-minute introductory conversation with our team.",
-  action: { label: "Schedule a call", href: `${LIVE}/demo` },
+  action: { label: "Schedule a call", href: DEMO },
 };
 
 export const subscribe = {
@@ -193,14 +186,8 @@ export const footer = {
   links: [
     { label: "Home", href: "/" },
     { label: "About", href: PAGE.about },
-    { label: "Product", href: "#evaluate" },
+    { label: "Product", href: PAGE.evaluate },
     { label: "Careers", href: PAGE.careers },
-    { label: "Contact", href: `${LIVE}/contact` },
-  ],
-  legal: [
-    { label: "Privacy Statement", href: `${LIVE}/legal/privacy-policy` },
-    { label: "Terms of Use", href: `${LIVE}/legal/terms-of-service` },
-    { label: "Cookie Declaration", href: `${LIVE}/legal/cookie-declaration` },
   ],
   copyright: "© Stable Auto Corporation",
 };

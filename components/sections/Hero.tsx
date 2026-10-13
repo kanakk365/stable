@@ -29,7 +29,7 @@ export function Hero() {
             <span className="shrink-0 rounded-full bg-mint px-2.5 py-0.5 font-mono text-[0.68rem] font-medium tracking-[0.04em] text-ink">
               New Oct &rsquo;25
             </span>
-            <span className="truncate">Pricing, Utilization &amp; Gas Price indices</span>
+            <span className="truncate">Pricing &amp; Utilization indices</span>
             <ArrowRight className="shrink-0 text-mint transition-transform duration-300 group-hover:translate-x-0.5" />
           </a>
 

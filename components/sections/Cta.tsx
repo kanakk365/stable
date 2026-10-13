@@ -6,11 +6,31 @@ import { useEffect, useRef, useState } from "react";
 import { DotField } from "@/components/fx/DotField";
 import { EASE, Reveal, SplitHeadline } from "@/components/fx/motion";
 import { ArrowUpRight, Check } from "@/components/ui/icons";
-import { cta } from "@/lib/content";
+import { SITE_ANALYSIS, cta } from "@/lib/content";
 
-export function Cta() {
+type Link = { label: string; href: string };
+
+/**
+ * The deep-teal closing banner. Defaults to the home page copy; product
+ * pages pass their own headline, actions and meeting title.
+ */
+export function Cta({
+  headline = cta.headline,
+  sub = cta.sub,
+  primary = cta.action,
+  secondary = { label: "Run a free site analysis", href: SITE_ANALYSIS },
+  meeting = "Intro call with Stable",
+  id = "contact",
+}: {
+  headline?: string;
+  sub?: string;
+  primary?: Link;
+  secondary?: Link;
+  meeting?: string;
+  id?: string;
+} = {}) {
   return (
-    <section className="px-3 pb-6 sm:px-5" id="contact">
+    <section className="px-3 pb-6 sm:px-5" id={id}>
       <div className="relative isolate mx-auto max-w-[1400px] overflow-hidden rounded-[32px] bg-deep text-on-deep sm:rounded-[40px]">
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(60%_45%_at_65%_30%,oklch(0.45_0.08_180/0.55),transparent_70%)]" />
         <DotField variant="deep" horizon={0.42} className="absolute inset-0 -z-10 h-full w-full" />
@@ -18,27 +38,27 @@ export function Cta() {
 
         <div className="shell grid items-center gap-14 py-20 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
           <div>
-            <SplitHeadline className="h2 max-w-[15ch] !text-on-deep" words={cta.headline.split(" ")} />
+            <SplitHeadline className="h2 max-w-[15ch] !text-on-deep" words={headline.split(" ")} />
             <Reveal delay={0.15}>
-              <p className="mt-6 max-w-[40ch] text-[1.15rem] leading-relaxed text-on-deep-mute">{cta.sub}</p>
+              <p className="mt-6 max-w-[40ch] text-[1.15rem] leading-relaxed text-on-deep-mute">{sub}</p>
             </Reveal>
             <Reveal delay={0.25}>
               <div className="mt-10 flex flex-wrap items-center gap-3">
-                <a href={cta.action.href} className="btn btn-mint">
-                  {cta.action.label}
+                <a href={primary.href} className="btn btn-mint">
+                  {primary.label}
                   <span className="chip" aria-hidden="true">
                     <ArrowUpRight />
                   </span>
                 </a>
-                <a href="https://stable.auto/contact" className="btn-ghost btn-ghost-deep">
-                  Contact sales
+                <a href={secondary.href} className="btn-ghost btn-ghost-deep">
+                  {secondary.label}
                 </a>
               </div>
             </Reveal>
           </div>
 
           <Reveal delay={0.2} className="mx-auto w-full max-w-[440px] lg:mr-0">
-            <Scheduler />
+            <Scheduler title={meeting} />
           </Reveal>
         </div>
       </div>
@@ -50,7 +70,7 @@ const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 const SLOTS = ["9:30", "11:00", "13:30", "15:00"];
 
 /** A booking widget that books itself: day, then slot, then confirmed. */
-function Scheduler() {
+function Scheduler({ title }: { title: string }) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { margin: "-20%" });
@@ -81,7 +101,7 @@ function Scheduler() {
     <div ref={ref} className="relative rounded-[24px] border border-white/10 bg-surface-2 p-5 text-ink shadow-[0_40px_80px_-30px_oklch(0.15_0.04_205/0.8)] sm:p-6">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-[1.02rem] font-semibold">Intro call with Stable</p>
+          <p className="text-[1.02rem] font-semibold">{title}</p>
           <p className="text-[0.82rem] text-mute">30 min · Video call</p>
         </div>
         <div className="flex -space-x-2" aria-hidden="true">

@@ -6,12 +6,14 @@ import { useRef } from "react";
 import { Reveal } from "@/components/fx/motion";
 import { testimonial } from "@/lib/content";
 
-/** The MN8 quote, lit word by word as it scrolls through the viewport. */
-export function Testimonial() {
+type Quote = { quote: string; role: string; company: string; logo: string; person?: string };
+
+/** A customer quote, lit word by word as it scrolls through the viewport. */
+export function Testimonial({ quote = testimonial as Quote }: { quote?: Quote } = {}) {
   const ref = useRef<HTMLQuoteElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.85", "end 0.5"] });
-  const words = testimonial.quote.split(" ");
+  const words = quote.quote.split(" ");
 
   return (
     <section className="section !pt-8 lg:!pt-12">
@@ -39,11 +41,11 @@ export function Testimonial() {
             <figcaption className="mt-12 flex items-center gap-5">
               <span className="grid h-14 w-24 place-items-center rounded-2xl border border-line bg-surface-2 px-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={testimonial.logo} alt="MN8" className="h-6 w-auto" />
+                <img src={quote.logo} alt={quote.company} className="h-6 w-auto" />
               </span>
               <span>
-                <span className="block font-semibold text-ink">{testimonial.role}</span>
-                <span className="block text-mute">{testimonial.company}</span>
+                <span className="block font-semibold text-ink">{quote.person ?? quote.role}</span>
+                <span className="block text-mute">{quote.person ? `${quote.role}, ${quote.company}` : quote.company}</span>
               </span>
             </figcaption>
           </Reveal>

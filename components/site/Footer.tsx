@@ -52,15 +52,6 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-line py-6 text-[0.86rem] text-mute sm:flex-row sm:items-center sm:justify-between">
           <span>{footer.copyright}</span>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
-            {footer.legal.map((l) => (
-              <li key={l.label}>
-                <a href={l.href} className="transition-colors hover:text-ink">
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
 
