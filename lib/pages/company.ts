@@ -30,9 +30,10 @@ export const about = {
     title: "Our Mission",
     statement: "To accelerate the widespread adoption of electric vehicles through smarter, more sustainable charging infrastructure.",
     body: "We believe better data leads to better decisions, and that every well-placed, well-priced charger brings us closer to a fully electrified future.",
+    // Photo: Michael Förtsch on Unsplash (unsplash.com/photos/qdNvo1Uk9lk), free to use.
     img: {
-      src: "/images/team-conference.webp",
-      alt: "Stable Auto CEO Rohan Puri speaking on stage at an EV charging conference",
+      src: "/images/mission-ev-charging.webp",
+      alt: "An electric car plugged in at a public charging station",
       width: 1800,
       height: 1200,
     },
