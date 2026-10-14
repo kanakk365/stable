@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 import { AdaptivePricing } from "@/components/page/AdaptivePricing";
-import { AudienceSplit, FeatureSplit, LogoBand, MediaFrame, MediaStage, PlanTiers, SectionIntro } from "@/components/page/blocks";
+import { AudienceSplit, FeatureSplit, LogoBand, MediaStage, PlanTiers, SectionIntro } from "@/components/page/blocks";
+import { OperatePerformanceView } from "@/components/page/OperatePerformanceView";
 import { PageHero } from "@/components/page/PageHero";
 import { Reveal } from "@/components/fx/motion";
 import { Cta } from "@/components/sections/Cta";
@@ -28,7 +29,7 @@ export default function OperatePage() {
           sub={c.hero.sub}
           primary={c.hero.primary}
           secondary={c.hero.secondary}
-          media={<MediaFrame img={c.hero.img} priority sizes="(min-width: 1180px) 1180px, 100vw" />}
+          media={<OperatePerformanceView />}
         />
         <AudienceSplit items={c.audience} />
         <LogoBand />

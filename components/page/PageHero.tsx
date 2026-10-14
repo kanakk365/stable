@@ -122,7 +122,7 @@ export function PageHero({
 
       {media ? (
         <div
-          className={`shell stage-in relative z-10 max-w-[1180px] ${
+          className={`shell stage-in relative z-10 max-w-[1120px] ${
             mediaOffset === "deep" ? "-mt-[140px] sm:-mt-[190px] lg:-mt-[250px]" : "-mt-[110px] sm:-mt-[150px] lg:-mt-[190px]"
           }`}
           style={{ ["--d" as string]: "550ms" }}

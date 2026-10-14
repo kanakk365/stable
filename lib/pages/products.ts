@@ -9,7 +9,6 @@ const EVALUATE_CALL = "https://meetings.hubspot.com/akash-krishnani/evaluate-mee
 const OPERATE_CALL = "https://meetings.hubspot.com/akash-krishnani/operate-meeting";
 
 const IMG = {
-  laptop: { src: "/images/product-laptop.webp", alt: "Stable Evaluate on a laptop: a national map of candidate sites above a ranked site table", width: 1600, height: 975 },
   marketTrends: { src: "/images/market-trends.webp", alt: "Stable market view: EV ownership, demographics and nearby amenities around a site", width: 1258, height: 974 },
   sitePerformance: { src: "/images/site-performance.webp", alt: "Predicting site performance: traffic radius, EV registrations, typical utilization of nearby chargers and EV traffic", width: 1450, height: 964 },
   operate: { src: "/images/operate-dashboard.webp", alt: "Stable Operate: network performance charts, a map of live sites and a station table", width: 1600, height: 817 },
@@ -24,7 +23,6 @@ export const evaluate = {
     sub: "Stable Evaluate uses transparent data and defensible forecasts to help investors and operators model returns and de-risk EV charging projects",
     primary: { label: "Run a free site analysis", href: "https://share.hsforms.com/1T1ayaE0zQfSHolan4Ho8dQc4u3d" },
     secondary: { label: "Book a call", href: "https://meetings.hubspot.com/akash-krishnani/evaluate-meeting" },
-    img: IMG.laptop,
   },
   audience: [
     {
@@ -124,7 +122,6 @@ export const operate = {
     sub: "Stable Operate connects utilization, pricing, energy, and reliability data to help operators and investors monitor performance, reduce costs, and drive higher portfolio returns",
     primary: { label: "Benchmark your network", href: "https://share.hsforms.com/12UpYwSiYS86_NDotfa2ZhAc4u3d" },
     secondary: { label: "Book a call", href: "https://meetings.hubspot.com/akash-krishnani/operate-meeting" },
-    img: IMG.operate,
   },
   audience: [
     {

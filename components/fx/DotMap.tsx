@@ -14,7 +14,7 @@ import { rand } from "@/lib/chart";
  */
 
 // Simplified outline of the contiguous US (lon, lat).
-const US: [number, number][] = [
+export const US: [number, number][] = [
   [-124.7, 48.4], [-123.0, 49.0], [-95.2, 49.0], [-95.2, 49.4], [-89.6, 48.0], [-84.8, 46.5],
   [-83.5, 46.1], [-82.4, 43.0], [-79.0, 43.3], [-76.5, 44.2], [-74.9, 45.0], [-71.5, 45.0],
   [-70.0, 46.7], [-67.8, 47.1], [-67.0, 44.8], [-70.2, 43.6], [-70.6, 42.0], [-71.9, 41.3],
@@ -39,11 +39,11 @@ const METROS: [number, number, number][] = [
   [-94.6, 39.1, 0.35], [-117.2, 32.8, 0.55], [-121.5, 38.6, 0.4],
 ];
 
-const LON0 = -125.5;
-const LON1 = -66.5;
-const LAT0 = 24.3;
-const LAT1 = 49.6;
-const KX = Math.cos((37 * Math.PI) / 180);
+export const LON0 = -125.5;
+export const LON1 = -66.5;
+export const LAT0 = 24.3;
+export const LAT1 = 49.6;
+export const KX = Math.cos((37 * Math.PI) / 180);
 export const MAP_ASPECT = ((LON1 - LON0) * KX) / (LAT1 - LAT0);
 
 function inside(lon: number, lat: number) {

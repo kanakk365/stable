@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { AudienceSplit, FeatureSplit, LogoBand, MediaFrame, MediaStage, PlanTiers } from "@/components/page/blocks";
+import { AudienceSplit, FeatureSplit, LogoBand, MediaStage, PlanTiers } from "@/components/page/blocks";
+import { EvaluateSitesView } from "@/components/page/EvaluateSitesView";
 import { PageHero } from "@/components/page/PageHero";
 import { Cta } from "@/components/sections/Cta";
 import { Subscribe } from "@/components/sections/Subscribe";
@@ -26,8 +27,7 @@ export default function EvaluatePage() {
           sub={c.hero.sub}
           primary={c.hero.primary}
           secondary={c.hero.secondary}
-          media={<MediaFrame img={c.hero.img} frame={false} priority sizes="(min-width: 1180px) 1180px, 100vw" className="drop-shadow-[0_40px_60px_oklch(0.25_0.035_182/0.25)]" />}
-          mediaOffset="deep"
+          media={<EvaluateSitesView />}
         />
         <AudienceSplit items={c.audience} />
         <LogoBand />
